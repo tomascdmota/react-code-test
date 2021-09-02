@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  top: 0;
+}
+
+.App {
+  border-bottom: 1px solid #dfdacd;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 2%;
+  line-height: 5px;
+  height: 10vh;
+}
+
+.header p {
+  color: #b2aea4;
+  margin-top: 4%;
+}
+.header h1 {
+  margin-bottom: 4%;
+  font-weight: 400;
+  letter-spacing: normal;
+}

@@ -4,13 +4,7 @@ import '../css/card.css';
 
 function Card({ id, views, userCount, createdAt }) {
 
-    const [clicks, setClicks] = useState(0);
-
-    increaseViewCount = () => {
-        this.setClicks(prevState => ({
-            
-        }))
-    }
+ 
 
     return(
         <div className="card">
@@ -28,7 +22,7 @@ function Card({ id, views, userCount, createdAt }) {
                         </div>
 
 
-                        <div className="views" onClick={increaseViewCount}>
+                        <div className="views">
                             <img src="https://res.cloudinary.com/dnho57ne8/image/upload/v1630662433/Views_tdmyso.svg"/> <p>{views} views</p>
                         </div>
                     </div>

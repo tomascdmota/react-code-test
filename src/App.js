@@ -39,9 +39,8 @@ render(){
     <div className="App">
       <Nav/>
     </div>
-
     <div className="card-component">
-    <Main/>
+      <Main/>
     </div>
    
     </div>

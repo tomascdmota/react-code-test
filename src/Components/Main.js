@@ -4,7 +4,14 @@ import Card from './Card'
 
 function Main() {
     const url = "https://6033c4d8843b15001793194e.mockapi.io/api/locations";
+
     const [locations, setLocations] = useState(null);
+    const [count, setCount] = useState(0);
+
+
+    
+
+   
   
     useEffect(() => {
         axios.get(url)
@@ -13,13 +20,15 @@ function Main() {
         })
   
     }, [url]);
+
+  
   
     return (
-      <div className="card-component">
+      <div className="card-component" >
         {locations ? locations.map((location) => (
-          <div >
-              <Card id={location.id}
-                    name={location.name}
+          <div>
+              <Card  id={location.id}
+                    count={count}
                     userCount={location.userCount}
                     createdAt={location.createdAt}/>
             

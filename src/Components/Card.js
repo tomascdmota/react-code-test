@@ -2,12 +2,14 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 import '../css/card.css';
 
-function Card({ id, views, userCount, createdAt }) {
+function Card({ id, userCount, createdAt }) {
+
+    const [view, setViewCount] = useState(0);
 
  
 
     return(
-        <div className="card">
+        <div className="card" onClick={() => setViewCount(v => v + 1)}>
             <div className="card-container">
                     <div id={id}>
                         <header>
@@ -23,7 +25,7 @@ function Card({ id, views, userCount, createdAt }) {
 
 
                         <div className="views">
-                            <img src="https://res.cloudinary.com/dnho57ne8/image/upload/v1630662433/Views_tdmyso.svg"/> <p>{views} views</p>
+                            <img src="https://res.cloudinary.com/dnho57ne8/image/upload/v1630662433/Views_tdmyso.svg"/> <p>{view} views</p>
                         </div>
                     </div>
             </div>

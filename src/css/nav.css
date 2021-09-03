@@ -1,0 +1,19 @@
+.header .locations{
+    font-family: "Lato";
+    color: #001122;
+    font-size: 16px;
+    padding-left: 30px;
+    opacity: 30%;
+    font-weight: 700;
+    line-height: 1.75;
+    margin-top: 19px;
+}
+
+.header .acme {
+    padding-left: 30px;
+    font-family: "Lato";
+    color: #001122;
+    font-size: 22px;
+    opacity: 80%;
+    line-height: 1.237;
+}

@@ -1,34 +1,40 @@
 import React, {useEffect, useState} from 'react'
-import axios from 'axios'
+import axios from 'axios';
+import '../css/card.css';
 
-function Card() {
-    const url = "https://6033c4d8843b15001793194e.mockapi.io/api/locations";
-    const [locations, setLocations] = useState(null);
+function Card({ id, views, userCount, createdAt }) {
 
-    useEffect(() => {
-        axios.get(url)
-        .then(response => {
-            setLocations(response.data)
-        })
+    const [clicks, setClicks] = useState(0);
 
-    }, [url])
-
-    if(locations) {
-        return (
-            <div>
-                <h1>Acme HQ</h1>
-                <p>{locations?.[0].name}</p>
-            </div>
-        )
+    increaseViewCount = () => {
+        this.setClicks(prevState => ({
+            
+        }))
     }
 
-    return (
-        <div>
-            <h1>error</h1>
+    return(
+        <div className="card">
+            <div className="card-container">
+                    <div id={id}>
+                        <header>
+                            <h1 className="title">Acme HQ</h1>
+                        </header>
+                        <div className="users">
+                            <img src="https://res.cloudinary.com/dnho57ne8/image/upload/v1630662433/Users_skb8o5.svg"/><p>{userCount} users</p>
+                        </div>
+
+                        <div className="date">
+                            <img src="https://res.cloudinary.com/dnho57ne8/image/upload/v1630662433/Timezone_lwh7iz.svg"/><p className="date">{createdAt}</p>
+                        </div>
+
+
+                        <div className="views" onClick={increaseViewCount}>
+                            <img src="https://res.cloudinary.com/dnho57ne8/image/upload/v1630662433/Views_tdmyso.svg"/> <p>{views} views</p>
+                        </div>
+                    </div>
+            </div>
         </div>
     )
+  }
 
-   
-}
-
-export default Card
+  export default Card;

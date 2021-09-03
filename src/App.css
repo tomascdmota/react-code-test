@@ -7,22 +7,11 @@
   border-bottom: 1px solid #dfdacd;
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
+.card-component {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  margin-top: 10px;
   margin-left: 2%;
-  line-height: 5px;
-  height: 10vh;
-}
-
-.header p {
-  color: #b2aea4;
-  margin-top: 4%;
-}
-.header h1 {
-  margin-bottom: 4%;
-  font-weight: 400;
-  letter-spacing: normal;
 }

@@ -1,0 +1,76 @@
+
+* {
+    margin:0;
+}
+.card {
+    width: 340px;
+    height: 139px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid rgba(0, 17, 34, 0.10) ;
+    border-radius: 2px;
+}
+
+.card:hover {
+    background-color: #F6F6F6;
+}
+
+
+.card-container {
+    display: inline-flex;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.title {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 800;
+    color: #001122;
+    opacity: 80%;
+    line-height: 1.778;
+}
+
+
+.card p {
+    font-family: "Lato";
+    width: 500;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #001122;
+    opacity: 80%;
+    
+}
+
+
+
+img {
+    height: 14px;
+    width: 14px ;
+    margin-right: 8px;
+}
+
+.views {
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.users {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.date {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}

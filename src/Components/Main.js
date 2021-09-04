@@ -6,7 +6,7 @@ function Main() {
     const url = "https://6033c4d8843b15001793194e.mockapi.io/api/locations";
 
     const [locations, setLocations] = useState(null);
-    const [count, setCount] = useState(0);
+    const count= useState(0);
 
 
     
@@ -34,10 +34,10 @@ function Main() {
             
           </div> 
         )) : (
-          <h1>error</h1>
+          <h1>Loading...</h1>
         )}
       </div>
     )
 }
 
-export default Main
+export default Main;

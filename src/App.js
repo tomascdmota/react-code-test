@@ -12,39 +12,21 @@ import Nav from './Components/Nav'
 
 
 
-
-export default class App extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      name: null,
-      userCount: null,
-      time: 0,
-      locations: null
-
-    }
-  }
-
-  componentDidMount() {
-    fetch('https://6033c4d8843b15001793194e.mockapi.io/api/locations').then((resp) => {
-      resp.json().then((result) => {
-        console.warn(result.data)
-      })
-    })
-  }
-
-render(){
+function App() {
+  
   return (
     <div>
-    <div className="App">
-      <Nav/>
-    </div>
-    <div className="card-component">
-      <Main/>
-    </div>
+      <div className="App">
+        <Nav/>
+      </div>
+      
+      <div className="card-component">
+        <Main/>
+      </div>
    
     </div>
   );
-}
+
 }
 
+export default App;

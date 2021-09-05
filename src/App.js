@@ -20,7 +20,7 @@ function App() {
         <Nav/>
       </div>
       
-      <div className="card-component">
+      <div className="card-component-main">
         <Main/>
       </div>
    

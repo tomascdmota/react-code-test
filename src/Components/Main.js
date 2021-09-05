@@ -21,6 +21,14 @@ function Main() {
   
     }, [url]);
 
+    const getDate = () => {
+      locations ? locations.map((location) => {
+        const date = (location.createdAt)
+        
+        console.log(date)
+      })
+     : {}
+    }
   
   
     return (

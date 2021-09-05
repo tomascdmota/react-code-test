@@ -8,6 +8,21 @@ function Main() {
     const [locations, setLocations] = useState(null);
     const count= useState(0);
 
+    const formatTime = (dateStr) => {
+      const time = dateStr.split("T")[1].split(".")[0];
+      const finalTime = time.slice(-4)
+      const finalTime2 = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+
+      if(time.length > 1){
+       
+       finalTime2[5] = +finalTime2[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
+       finalTime2[0] = +finalTime2[0] % 12 || 12; // Adjust hours
+      }
+
+      const date = dateStr.split("T")[0];
+      return finalTime2.join('');
+    }
+
 
     
 
@@ -21,14 +36,7 @@ function Main() {
   
     }, [url]);
 
-    const getDate = () => {
-      locations ? locations.map((location) => {
-        const date = (location.createdAt)
-        
-        console.log(date)
-      })
-     : {}
-    }
+    
   
   
     return (
@@ -38,7 +46,7 @@ function Main() {
               <Card  id={location.id}
                     count={count}
                     userCount={location.userCount}
-                    createdAt={location.createdAt}/>
+                    createdAt={formatTime(location.createdAt)}/>
             
           </div> 
         )) : (

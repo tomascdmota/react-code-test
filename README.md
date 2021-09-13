@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# This is my Application for Tymeshift
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made using React.js only. 
 
-## Available Scripts
+## Components
 
-In the project directory, you can run:
+ I decided to separate all of the things I had to do into components, so it would ease my job and make it easier, in case I had to do the same thing twice, I could just render the component on both ends.
+    
 
-### `npm start`
+### `Nav.js`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ Starting with the nav. I was kind of undecided on what to do here, but I ended up doing a nav so I could isolate the component and styling it without the chance of it affecting/getting affected by other components css. 
+  This one was quite simple, just two text tags and the styling provided to me in the github repo.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### `Main.js`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ So I chose Main.js to store all of the cards and for fetching the API data. I used a few functions from the utils folder, but I'll go there next. 
+  It was on this file that I ended up using AXIOS for fetching the API data. Axios managed the HTTP Request, that retrieve an response, which was an array (JSON object).
+ Last but not least I mapped through the array so I could match each card component with their unique data (used ID).
 
-### `npm run build`
+### `Card.js`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is the component that holds every bit of information provided by the API.
+ It has a hook, to save the current view count to the LocalStorage (so it isn't lost on a browser refresh) and serves two functions -> 
+  - Open the modal and increase the viewCount by One
+  - Close the modal
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In the core of this component we return the JSX part of it (HTML) that takes the API data passed from the Main.js component. By the end of it, we are rendering a ternary function which renders the modal if the state of showModal is equal to true.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Modal.js`
+ 
+ For starters we are passing as parameters of this component the same data that the card component holds. Then we map the array just to retrieve the id of each object in order to link each modal to their respective card.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Css
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ In terms of the Css it was quite simple. I used flexbox for the navbar, the cards and the modal, and ended up using GridLayout to render all the cards in this position, so it auto adjusts. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  Every guideline was followed, in terms of colors, fonts, text sizes, margins, paddings, opacities, etc...
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Utils
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ I created two utils, one for the Url, which made it simpler in case if we needed to change the API's url down the line we would just need to change it once (this would be done with environment variables in a production build).
+  The second one was the Date.helper.js, which I made to format the data inside of the cards, so I don't fill the card component with much junk, this way I can reuse it and if I need to display the date instead of the time I just need to change it in one place. Just makes sense.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Resources 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Eventough I'd love to say so, I don't know everything and am aware of how far from knowing it all is. Therefore I thought it would be nice to show the resources I used to make this project, as it shows my googling skills and ability to prepare what I am going to do in terms of logics and then research the execution needed for the process. For this I the obvious Stack Overflow, github pages and other articles that I found online. However, I am also part of several dev discord groups and I did go there too. I am not afraid to admit when I am stuck and I will ask for help rather than sitting there trying the same 4 solutions over and over. 
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Overview
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ After spending this many hours around a project like this I feel like I learned a few things. It was nice to do, I did stumble on a few setbacks but managed to overcome them all.
+  Thank you and I will be waiting for your feedback.
+  Tomas.
